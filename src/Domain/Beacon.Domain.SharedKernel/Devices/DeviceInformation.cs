@@ -1,7 +1,7 @@
 ﻿namespace Beacon.Domain.SharedKernel.Devices
 {
     /// <summary>
-    /// Represents information about a single device
+    /// Represents information about a single physical device
     /// </summary>
     public record class DeviceInformation
     {

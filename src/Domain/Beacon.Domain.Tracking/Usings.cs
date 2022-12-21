@@ -1,0 +1,9 @@
+﻿global using Beacon.Domain.SharedKernel.Devices;
+global using Beacon.Domain.SharedKernel.Location;
+global using Beacon.Domain.SharedKernel.Users;
+global using Beacon.Domain.Tracking.Events;
+global using CSharpFunctionalExtensions;
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Threading.Tasks;
