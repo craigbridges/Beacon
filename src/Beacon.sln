@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beacon.Domain.SharedKernel", "Domain\Beacon.Domain.SharedKernel\Beacon.Domain.SharedKernel.csproj", "{738F5CB5-180D-4363-8EC7-E714B18470FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Beacon.Domain.SharedKernel", "Domain\Beacon.Domain.SharedKernel\Beacon.Domain.SharedKernel.csproj", "{738F5CB5-180D-4363-8EC7-E714B18470FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beacon.Domain.People", "Domain\Beacon.Domain.People\Beacon.Domain.People.csproj", "{EFA23ABC-79E8-404C-BB1A-2A3698F764CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Beacon.Domain.People", "Domain\Beacon.Domain.People\Beacon.Domain.People.csproj", "{EFA23ABC-79E8-404C-BB1A-2A3698F764CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beacon.Domain.Alerts", "Domain\Beacon.Domain.Alerts\Beacon.Domain.Alerts.csproj", "{1AA8599A-A042-4A67-A06F-7073958F0A2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Beacon.Domain.Alerts", "Domain\Beacon.Domain.Alerts\Beacon.Domain.Alerts.csproj", "{1AA8599A-A042-4A67-A06F-7073958F0A2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beacon.Domain.Calendar", "Domain\Beacon.Domain.Calendar\Beacon.Domain.Calendar.csproj", "{CB3240B0-BB60-4DF0-B48B-D1075D8282B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Beacon.Domain.Scheduling", "Domain\Beacon.Domain.Scheduling\Beacon.Domain.Scheduling.csproj", "{CB3240B0-BB60-4DF0-B48B-D1075D8282B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beacon.Domain.Devices", "Domain\Beacon.Domain.Devices\Beacon.Domain.Devices.csproj", "{0DBF26A2-7DF0-486E-8EE4-69D563DA879F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Beacon.Domain.Devices", "Domain\Beacon.Domain.Devices\Beacon.Domain.Devices.csproj", "{0DBF26A2-7DF0-486E-8EE4-69D563DA879F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beacon.Domain.Tracking", "Domain\Beacon.Domain.Tracking\Beacon.Domain.Tracking.csproj", "{98B33E5F-5A04-41CD-90B7-CF152724C8F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Beacon.Domain.Tracking", "Domain\Beacon.Domain.Tracking\Beacon.Domain.Tracking.csproj", "{98B33E5F-5A04-41CD-90B7-CF152724C8F8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C496C8A2-D0A6-493B-A6CE-158274ECF023}"
 EndProject

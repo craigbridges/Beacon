@@ -24,5 +24,11 @@
         /// Gets the users heart rate reading (represented as the number of beats per minute)
         /// </summary>
         public int? HeartRateReading { get; init; }
+
+        /// <summary>
+        /// Overridden to provide a custom descriptor
+        /// </summary>
+        /// <returns>The user name</returns>
+        public override string ToString() => UserName;
     }
 }

@@ -1,7 +1,7 @@
 ﻿namespace Beacon.Domain.Devices;
 
 /// <summary>
-/// An aggregate root that represents a single physical device
+/// Aggregate root that represents a single physical device
 /// </summary>
 public class Device : IAggregateRoot
 {
@@ -15,6 +15,7 @@ public class Device : IAggregateRoot
         OwnerId = ownerId;
         Name = name;
         Information = information;
+        Enabled = true;
 
         UnpublishedEvents.Add
         (
@@ -73,4 +74,87 @@ public class Device : IAggregateRoot
     /// Gets the devices information (such as serial number, operating system, etc)
     /// </summary>
     public DeviceInformation Information { get; protected set; } = default!;
+
+    /// <summary>
+    /// Returns true if the device is currently enabled
+    /// </summary>
+    public bool Enabled { get; protected set; }
+
+    /// <summary>
+    /// Gets the date and time the device was last enabled
+    /// </summary>
+    public DateTime? DateLastEnabled { get; protected set; }
+
+    /// <summary>
+    /// Gets the date and time the device was last disabled
+    /// </summary>
+    public DateTime? DateLastDisabled { get; protected set; }
+
+    /// <summary>
+    /// Enables the device
+    /// </summary>
+    /// <returns>The result of the operation</returns>
+    public Result Enable()
+    {
+        if (Enabled)
+        {
+            return Result.Failure($"{this} has already been enabled.");
+        }
+        else
+        {
+            var now = DateTime.UtcNow;
+
+            Enabled = true;
+            DateLastEnabled = now;
+
+            UnpublishedEvents.Add
+            (
+                new DeviceEnabledEvent()
+                {
+                    DeviceId = Id,
+                    OwnerId = OwnerId,
+                    DateEnabled = now,
+                    DeviceName = Name,
+                    DeviceInformation = Information
+                }
+            );
+
+            return Result.Success();
+        }
+    }
+
+    /// <summary>
+    /// Disables the device
+    /// </summary>
+    /// <returns>The result of the operation</returns>
+    public Result Disable()
+    {
+        if (false == Enabled)
+        {
+            return Result.Failure($"{this} has already been disabled.");
+        }
+        else
+        {
+            var now = DateTime.UtcNow;
+
+            Enabled = false;
+            DateLastDisabled = now;
+
+            UnpublishedEvents.Add
+            (
+                new DeviceDisabledEvent()
+                {
+                    DeviceId = Id,
+                    OwnerId = OwnerId,
+                    DateDisabled = now,
+                    DeviceName = Name,
+                    DeviceInformation = Information
+                }
+            );
+
+            return Result.Success();
+        }
+    }
+
+    public override string ToString() => Name;
 }

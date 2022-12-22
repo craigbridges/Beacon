@@ -3,7 +3,7 @@
 using System.Net;
 
 /// <summary>
-/// An aggregate root that represents a single location ping
+/// Aggregate root that represents a single location ping
 /// </summary>
 public class LocationPing : IAggregateRoot
 {
@@ -29,9 +29,26 @@ public class LocationPing : IAggregateRoot
 
     public static Result<LocationPing> Create(PingRequest request)
     {
-        // TODO: validate request?
-
-        return new LocationPing(request);
+        if (request.Device == null)
+        {
+            return Result.Failure<LocationPing>("The device details are missing.");
+        }
+        else if (request.IpAddress == null)
+        {
+            return Result.Failure<LocationPing>("The IP address is missing.");
+        }
+        else if (request.User == null)
+        {
+            return Result.Failure<LocationPing>("The user details are missing.");
+        }
+        else if (request.Coordinate == null)
+        {
+            return Result.Failure<LocationPing>("The location coordinate is missing.");
+        }
+        else
+        {
+            return new LocationPing(request);
+        }
     }
 
     /// <summary>
@@ -88,4 +105,13 @@ public class LocationPing : IAggregateRoot
     /// Gets any meta data set for the ping request
     /// </summary>
     public Dictionary<string, string> MetaData { get; protected set; } = new();
+
+    /// <summary>
+    /// Generates a custom description of the location ping
+    /// </summary>
+    /// <returns>A description of the ping</returns>
+    public override string ToString()
+    {
+        return $"{User} pinged from {Device} using IP address {IpAddress} at coordinate {Coordinate}.";
+    }
 }
