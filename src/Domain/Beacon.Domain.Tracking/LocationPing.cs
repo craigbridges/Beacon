@@ -20,8 +20,8 @@ public class LocationPing : IAggregateRoot
         IpAddress = request.IpAddress;
         User = request.User;
         Coordinate = request.Coordinate;
-        LocalDateTime = request.LocalDateTime;
-        UtcDateDate = request.UtcDateDate;
+        DateSentLocal = request.DateSentLocal;
+        DateSentUtc = request.DateSentUtc;
         MetaData = request.MetaData;
 
         UnpublishedEvents.Add(new LocationPingedEvent(Id, request));
@@ -94,12 +94,12 @@ public class LocationPing : IAggregateRoot
     /// <summary>
     /// Gets the device locations local date and time when the request was sent
     /// </summary>
-    public DateTime LocalDateTime { get; protected set; }
+    public DateTime DateSentLocal { get; protected set; }
 
     /// <summary>
     /// Gets the UTC date and time when the request was sent
     /// </summary>
-    public DateTime UtcDateDate { get; protected set; }
+    public DateTime DateSentUtc { get; protected set; }
 
     /// <summary>
     /// Gets any meta data set for the ping request

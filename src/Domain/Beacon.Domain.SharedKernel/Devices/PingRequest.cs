@@ -32,12 +32,12 @@
         /// <summary>
         /// Gets the device locations local date and time when the request was sent
         /// </summary>
-        public required DateTime LocalDateTime { get; init; }
+        public required DateTime DateSentLocal { get; init; }
 
         /// <summary>
         /// Gets the UTC date and time when the request was sent
         /// </summary>
-        public required DateTime UtcDateDate { get; init; }
+        public required DateTime DateSentUtc { get; init; }
 
         /// <summary>
         /// Gets any meta data set for the ping request
