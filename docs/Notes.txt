@@ -1,0 +1,48 @@
+Contacts
+--------
+
+	- Generic public list of read-only contacts for regions (like emergency services, local police/rescue etc)
+	- Private list of contacts (name, email, phone, etc)
+	- Connect contacts with other users (so they can stay in sync, message, etc)
+	- Different types of contacts for different scenarios (e.g. emergency contacts, amber contacts, green, etc)
+
+Beacon Alerts
+-------------
+
+	Red: Distress SOS call (life in immediate danger)
+	Amber: High Alert (fearful for safety or life under threat)
+	Green: Check-in (let contacts know where you are)
+
+	- Use all communication channels available (for red/SOS)
+	- Acquire GPS or triangulation, IP based, what3words, or manual location
+	- Send message to all relevant contacts:
+		- My name
+		- Alert level
+		- My location
+		- Timestamp
+		- Device
+		- Battery level
+		- Bio data (like HR, etc) if available
+	- Repeat message every x seconds/minutes for red alert (until battery dies, no signal or manually stopped/overridden)
+	- Can only manually override alert using some sort of authentication
+	- Distress call could be raised by something like 3 second press of a button
+
+Hardware
+--------
+
+	- Initially smart phone app
+	- Later could be wearable tech like watches, bracelets, interwoven into clothing, etc
+	- Wearable tech could communication with smart phone to do all the heavy lifting, like location, server communication etc
+	- Wearable could have distress button that can be long pressed in case of emergency
+
+Use Case Scenario Examples
+--------------------------
+
+	- As a rape alarm (red)
+	- Lost while exploring alone (amber)
+	- Kidnapped (red)
+	- Life threatened by one or more people with weapons (red)
+	- Injured/lost while on a trail run (amber)
+	- Concerned for welfare while travelling (amber)
+	- To save something else's life (e.g. heartattack vicim, you could stay with them and alert help with location, etc) (red)
+	- Trapped inside collapsed building, etc (red)
